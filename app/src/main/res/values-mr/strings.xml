@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name"> माझे डेमो </string>
+
+    <string name="language_text"> मराठी </string>
+    <string name="change_language"> भाषा बदला </string>
+
+</resources>
