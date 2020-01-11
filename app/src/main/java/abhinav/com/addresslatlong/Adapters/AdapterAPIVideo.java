@@ -63,6 +63,7 @@ public class AdapterAPIVideo extends RecyclerView.Adapter<AdapterAPIVideo.DataHo
             @Override
             public void onClick(View v)
             {
+                holder.imgv_play.setVisibility(View.GONE);
                 String video_url = al_videoURL.get(position).getVideoURL();
 
                 final String video_id = extractVideoIdFromUrl(video_url);
@@ -74,16 +75,23 @@ public class AdapterAPIVideo extends RecyclerView.Adapter<AdapterAPIVideo.DataHo
                     public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b)
                     {
                         mYouTubePlayer = youTubePlayer;
-                        if (mYouTubePlayer != null) {
-                            mYouTubePlayer.loadVideo(video_id);
-                            mYouTubePlayer.play();
+                        if (mYouTubePlayer != null)
+                        {
+                            try
+                            {
+                                mYouTubePlayer.loadVideo(video_id);
+                                mYouTubePlayer.play();
+                            }catch (Exception e)
+                            {
+                                e.printStackTrace();
+                            }
                         }
                     }
 
                     @Override
                     public void onInitializationFailure(YouTubePlayer.Provider provider, YouTubeInitializationResult youTubeInitializationResult)
                     {
-
+                        System.out.println("Initialization failed");
                     }
                 });
             }
