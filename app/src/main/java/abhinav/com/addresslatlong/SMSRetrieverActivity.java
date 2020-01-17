@@ -12,4 +12,9 @@ public class SMSRetrieverActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_smsretriever);
     }
+
+    public void getHintRequest()
+    {
+
+    }
 }
