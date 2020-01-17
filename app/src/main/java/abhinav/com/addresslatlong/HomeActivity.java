@@ -14,7 +14,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     Button btn_fileUpload, btn_video_recording, btn_expr_evaluator, btn_abar_count;
     Button btn_expandalble_view, btn_count_down, btn_scan_aadhar, btn_language_demo;
     Button btn_input_restrict, btn_crop_image, btn_aws_sns;
-    Button btn_drawer_demo, btn_youtube_videoList;
+    Button btn_drawer_demo, btn_sms_retriver;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -26,8 +26,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
     public void initViews()
     {
-        btn_youtube_videoList= (Button) findViewById(R.id.btn_youtube_videoList);
-        btn_youtube_videoList.setOnClickListener(this);
+        btn_sms_retriver= (Button) findViewById(R.id.btn_sms_retriver);
+        btn_sms_retriver.setOnClickListener(this);
 
         btn_drawer_demo= (Button) findViewById(R.id.btn_drawer_demo);
         btn_drawer_demo.setOnClickListener(this);
@@ -93,9 +93,9 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view)
     {
-        if(view.getId()==R.id.btn_youtube_videoList)
+        if(view.getId()==R.id.btn_sms_retriver)
         {
-            startActivity(new Intent(HomeActivity.this, YoutubeListActivity.class));
+            startActivity(new Intent(HomeActivity.this, SMSRetrieverActivity.class));
         }
 
         if(view.getId()==R.id.btn_drawer_demo)

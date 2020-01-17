@@ -18,10 +18,10 @@
             android:padding="10dp">
 
             <Button
-                android:id="@+id/btn_youtube_videoList"
+                android:id="@+id/btn_sms_retriver"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/youtube_video_list"/>
+                android:text="@string/sms_retriever_api"/>
 
             <Button
                 android:id="@+id/btn_drawer_demo"

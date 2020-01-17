@@ -48,7 +48,9 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
-    <string name="youtube_video_list">Youtube Video List</string>
+    <string name="sms_retriever_api">SMS Retriever API</string>
+    <string name="sms_retriever_api_desc">This is demo for retrieving OTP using sms Retriever API</string>
+    <string name="enter_otp">Enter OTP</string>
 
 
 </resources>

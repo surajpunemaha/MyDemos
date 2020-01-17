@@ -64,7 +64,7 @@
             android:name=".DrawerDemoActivity"
             android:label="@string/title_activity_drawer_demo"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".YoutubeListActivity"></activity>
+        <activity android:name=".SMSRetrieverActivity"></activity>
     </application>
 
 </manifest>
