@@ -34,4 +34,6 @@ dependencies {
     compile 'com.journeyapps:zxing-android-embedded:3.4.0'
     implementation 'net.objecthunter:exp4j:0.4.7'
     implementation files('libs/YouTubeAndroidPlayerApi.jar')
+
+    implementation 'com.google.android.gms:play-services-auth:16.0.1'
 }
