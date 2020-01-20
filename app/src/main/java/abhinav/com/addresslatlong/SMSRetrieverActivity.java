@@ -10,19 +10,29 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.credentials.Credential;
 import com.google.android.gms.auth.api.credentials.HintRequest;
+import com.google.android.gms.auth.api.phone.SmsRetriever;
+import com.google.android.gms.auth.api.phone.SmsRetrieverClient;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+
+import abhinav.com.addresslatlong.Interfaces.OtpReceivedInterface;
+import abhinav.com.addresslatlong.Other.AppSignatureHelper;
+import abhinav.com.addresslatlong.Receivers.SmsBroadcastReceiver;
 
 public class SMSRetrieverActivity extends AppCompatActivity implements
-        GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener
-{
+        GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, OtpReceivedInterface {
 
     GoogleApiClient mGoogleAPIClient;
     EditText edit_mobile, edit_otp;
+    SmsBroadcastReceiver mSmsBroadcastReceiver;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -40,7 +50,9 @@ public class SMSRetrieverActivity extends AppCompatActivity implements
         if(mGoogleAPIClient!=null) {
             mGoogleAPIClient.connect();
 
-            getHintRequest();
+            //getHintRequest();
+
+            startSMSListener();
         }
     }
 
@@ -48,11 +60,18 @@ public class SMSRetrieverActivity extends AppCompatActivity implements
     {
         edit_mobile = (EditText) findViewById(R.id.edit_mobile);
         edit_otp = (EditText) findViewById(R.id.edit_otp);
+
+        mSmsBroadcastReceiver = new SmsBroadcastReceiver();
+        mSmsBroadcastReceiver.setOnOTPListener(this);
+
+        AppSignatureHelper appSignatureHelper = new AppSignatureHelper(this);
+        appSignatureHelper.getAppSignatures();
     }
 
     @SuppressLint("RestrictedApi")
     public void getHintRequest()
     {
+        // this displays the popup with sim mobile numbers inserted in your device.
         HintRequest hintRequest = new HintRequest.Builder()
                 .setPhoneNumberIdentifierSupported(true)
                 .build();
@@ -90,10 +109,46 @@ public class SMSRetrieverActivity extends AppCompatActivity implements
         {
             if(resultCode== RESULT_OK)
             {
+                // retrieve the selected phone number from hint popup
                 Credential cred = data.getParcelableExtra(Credential.EXTRA_KEY);
                 edit_mobile.setText(cred.getId().substring(3));
                 edit_mobile.setSelection(edit_mobile.getText().toString().trim().length());
             }
         }
+    }
+
+    public void startSMSListener()
+    {
+        SmsRetrieverClient mClient = SmsRetriever.getClient(this);
+        Task<Void> mTask = mClient.startSmsRetriever();
+        mTask.addOnSuccessListener(new OnSuccessListener<Void>()
+        {
+            @Override
+            public void onSuccess(Void aVoid)
+            {
+                Toast.makeText(SMSRetrieverActivity.this, "SMS Retriever Starts", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        mTask.addOnFailureListener(new OnFailureListener()
+        {
+            @Override
+            public void onFailure(@NonNull Exception e)
+            {
+                Toast.makeText(SMSRetrieverActivity.this, "Error", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    @Override
+    public void onOtpReceived(String otp)
+    {
+        edit_otp.setText(otp);
+    }
+
+    @Override
+    public void onOtpTimeout()
+    {
+
     }
 }
