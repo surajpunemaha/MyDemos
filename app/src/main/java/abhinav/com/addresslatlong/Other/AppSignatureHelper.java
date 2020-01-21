@@ -6,7 +6,6 @@ import android.content.pm.PackageManager;
 import android.content.pm.Signature;
 import android.util.Base64;
 import android.util.Log;
-
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -14,7 +13,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
- * Created by abhinav on 20/1/20.
+ * Created by abhinav on 21/1/20.
  */
 
 public class AppSignatureHelper extends ContextWrapper
@@ -29,8 +28,9 @@ public class AppSignatureHelper extends ContextWrapper
     }
 
     /**
-     * Get all the app signatures for the current package
-     */
+    * Get all the app signatures for the current package
+    *
+    */
 
     public ArrayList<String> getAppSignatures() {
         ArrayList<String> appCodes = new ArrayList<>();
@@ -71,5 +71,6 @@ public class AppSignatureHelper extends ContextWrapper
         }
         return null;
     }
+
 
 }

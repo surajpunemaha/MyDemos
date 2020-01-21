@@ -66,14 +66,14 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".SMSRetrieverActivity"/>
         
-        <receiver android:name=".Receivers.SmsBroadcastReceiver"
+        <!--<receiver android:name=".Receivers.SmsBroadcastReceiver"
             android:exported="true">
 
             <intent-filter>
                 <action android:name="com.google.android.gms.auth.api.phone.SMS_RETRIEVE"/>
             </intent-filter>
 
-        </receiver>
+        </receiver>-->
     </application>
 
 </manifest>

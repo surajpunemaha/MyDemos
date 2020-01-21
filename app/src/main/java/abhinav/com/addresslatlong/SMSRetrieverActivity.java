@@ -3,6 +3,7 @@ package abhinav.com.addresslatlong;
 import android.annotation.SuppressLint;
 import android.app.PendingIntent;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.IntentSender;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -28,7 +29,7 @@ import abhinav.com.addresslatlong.Other.AppSignatureHelper;
 import abhinav.com.addresslatlong.Receivers.SmsBroadcastReceiver;
 
 public class SMSRetrieverActivity extends AppCompatActivity implements
-        GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, OtpReceivedInterface {
+        GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener  {
 
     GoogleApiClient mGoogleAPIClient;
     EditText edit_mobile, edit_otp;
@@ -50,9 +51,28 @@ public class SMSRetrieverActivity extends AppCompatActivity implements
         if(mGoogleAPIClient!=null) {
             mGoogleAPIClient.connect();
 
-            //getHintRequest();
+            getHintRequest();
 
             startSMSListener();
+
+            mSmsBroadcastReceiver = new SmsBroadcastReceiver();
+
+            mSmsBroadcastReceiver.setOnOTPListener(new OtpReceivedInterface() {
+                @Override
+                public void onOtpReceived(String otp) {
+
+                }
+
+                @Override
+                public void onOtpTimeout() {
+
+                }
+            });
+
+            IntentFilter filter = new IntentFilter();
+            filter.addAction("com.google.android.gms.auth.api.phone.SMS_RETRIEVE");
+            registerReceiver(mSmsBroadcastReceiver, filter);
+
         }
     }
 
@@ -60,9 +80,6 @@ public class SMSRetrieverActivity extends AppCompatActivity implements
     {
         edit_mobile = (EditText) findViewById(R.id.edit_mobile);
         edit_otp = (EditText) findViewById(R.id.edit_otp);
-
-        mSmsBroadcastReceiver = new SmsBroadcastReceiver();
-        mSmsBroadcastReceiver.setOnOTPListener(this);
 
         AppSignatureHelper appSignatureHelper = new AppSignatureHelper(this);
         appSignatureHelper.getAppSignatures();
@@ -138,17 +155,5 @@ public class SMSRetrieverActivity extends AppCompatActivity implements
                 Toast.makeText(SMSRetrieverActivity.this, "Error", Toast.LENGTH_SHORT).show();
             }
         });
-    }
-
-    @Override
-    public void onOtpReceived(String otp)
-    {
-        edit_otp.setText(otp);
-    }
-
-    @Override
-    public void onOtpTimeout()
-    {
-
     }
 }
