@@ -14,7 +14,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     Button btn_fileUpload, btn_video_recording, btn_expr_evaluator, btn_abar_count;
     Button btn_expandalble_view, btn_count_down, btn_scan_aadhar, btn_language_demo;
     Button btn_input_restrict, btn_crop_image, btn_aws_sns;
-    Button btn_drawer_demo, btn_sms_retriver;
+    Button btn_drawer_demo, btn_sms_retriver, btn_drawText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -26,6 +26,9 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
     public void initViews()
     {
+        btn_drawText= (Button) findViewById(R.id.btn_drawText);
+        btn_drawText.setOnClickListener(this);
+
         btn_sms_retriver= (Button) findViewById(R.id.btn_sms_retriver);
         btn_sms_retriver.setOnClickListener(this);
 
@@ -93,6 +96,11 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view)
     {
+        if(view.getId()==R.id.btn_drawText)
+        {
+            startActivity(new Intent(HomeActivity.this, TextOnImageActivity.class));
+        }
+
         if(view.getId()==R.id.btn_sms_retriver)
         {
             startActivity(new Intent(HomeActivity.this, SMSRetrieverActivity.class));

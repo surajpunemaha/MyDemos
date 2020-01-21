@@ -18,6 +18,12 @@
             android:padding="10dp">
 
             <Button
+                android:id="@+id/btn_drawText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/draw_text"/>
+
+            <Button
                 android:id="@+id/btn_sms_retriver"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

@@ -53,6 +53,7 @@
     <string name="mobile_no">Mobile No</string>
     <string name="send_otp">Send OTP</string>
     <string name="enter_otp">Enter OTP</string>
+    <string name="draw_text">Draw Text On Image</string>
 
 
 </resources>
