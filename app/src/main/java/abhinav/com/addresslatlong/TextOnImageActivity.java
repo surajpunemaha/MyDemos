@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
+import android.graphics.PointF;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Build;
@@ -93,7 +94,19 @@ public class TextOnImageActivity extends AppCompatActivity implements View.OnCli
     {
         if(v.getId()==R.id.imgv_pickImage)
         {
+            /*PointF p = new PointF(event.getX(), event.getY());
+            View root = v.getRootView();
+            while (v.getParent() instanceof View && v.getParent() != root) {
+                p.y += v.getTop();
+                p.x += v.getLeft();
+                v = (View) v.getParent();
+            }*/
 
+            float x = event.getX();
+            float y = event.getY();
+
+            txtv_x_cordinate.setText(""+x);
+            txtv_Y_cordinate.setText(""+y);
         }
 
         return false;
