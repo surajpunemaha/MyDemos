@@ -76,7 +76,8 @@
 
         </receiver>
         -->
-        <activity android:name=".TextOnImageActivity"></activity>
+        <activity android:name=".TextOnImageActivity" />
+        <activity android:name=".RecyclerWithCheckboxActivity"></activity>
     </application>
 
 </manifest>
