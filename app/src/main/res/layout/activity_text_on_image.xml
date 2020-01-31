@@ -7,106 +7,175 @@
     android:orientation="vertical"
     tools:context="abhinav.com.addresslatlong.TextOnImageActivity">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="350dp"
-        android:orientation="vertical"
-        android:background="#ececec">
-
-        <ImageView
-            android:id="@+id/imgv_pickImage"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-    </LinearLayout>
-
-    <Button
-        android:id="@+id/btn_pickImage"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Pick Image From Gallery"/>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
-        android:orientation="horizontal">
+        android:layout_height="wrap_content">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_weight="1"
-            android:padding="5dp">
+            android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/txtv_imgWidth"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                android:orientation="vertical"
+                android:background="#ececec">
+
+                <ImageView
+                    android:id="@+id/imgv_pickImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_pickImage"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Image Width :- 0 px"/>
-
-            <TextView
-                android:id="@+id/txtv_imgHeight"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Image Width :- 0 px"/>
-
-        </LinearLayout>
-
-        <View
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:background="#c9c9c9"/>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_weight="1"
-            android:padding="5dp">
+                android:text="Pick Image From Gallery"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
+                android:layout_marginTop="2dp"
                 android:orientation="horizontal">
 
-                <TextView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="X :-"/>
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:padding="5dp">
 
-                <TextView
-                    android:id="@+id/txtv_x_cordinate"
-                    android:layout_width="wrap_content"
+                    <TextView
+                        android:id="@+id/txtv_imgWidth"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Image Width :- 0 px"/>
+
+                    <TextView
+                        android:id="@+id/txtv_imgHeight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Image Width :- 0 px"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="#c9c9c9"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:text="0"/>
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:padding="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtv_xleft"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="25sp"
+                            android:padding="5dp"
+                            android:layout_marginRight="25dp"
+                            android:text="@string/lt"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="X :-"/>
+
+                        <TextView
+                            android:id="@+id/txtv_x_cordinate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:text="0"/>
+
+                        <TextView
+                            android:id="@+id/txtv_xright"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="25sp"
+                            android:layout_marginLeft="25dp"
+                            android:padding="5dp"
+                            android:text="@string/gt"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtv_yleft"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="25sp"
+                            android:padding="5dp"
+                            android:layout_marginRight="25dp"
+                            android:text="@string/lt"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Y :-"/>
+
+                        <TextView
+                            android:id="@+id/txtv_Y_cordinate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:text="0"/>
+
+                        <TextView
+                            android:id="@+id/txtv_yright"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="25sp"
+                            android:layout_marginLeft="25dp"
+                            android:padding="5dp"
+                            android:text="@string/gt"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="horizontal">
+                android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="wrap_content"
+                <EditText
+                    android:id="@+id/edit_input"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Y :-"/>
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="Some Text"/>
 
-                <TextView
-                    android:id="@+id/txtv_Y_cordinate"
-                    android:layout_width="wrap_content"
+                <Button
+                    android:id="@+id/btn_drawText"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:text="0"/>
+                    android:text="Draw Text"/>
 
             </LinearLayout>
 
         </LinearLayout>
 
-    </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>
