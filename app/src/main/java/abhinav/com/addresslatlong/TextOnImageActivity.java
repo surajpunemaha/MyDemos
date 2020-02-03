@@ -178,21 +178,17 @@ public class TextOnImageActivity extends AppCompatActivity implements View.OnCli
 
         float textSize = seekb_textSize.getProgress();
 
-        /*int red = seekb_red.getProgress();
+        int red = seekb_red.getProgress();
         int green = seekb_green.getProgress();
         int blue = seekb_blue.getProgress();
 
-        String color_string = "#"+Integer.toHexString(red)
-                +""+Integer.toHexString(green)
-                +""+Integer.toHexString(blue);
+        int color = Color.argb(255, red, green, blue);
 
-        int color = Color.parseColor(color_string);*/
-
-        Bitmap new_bm = drawTextOnImage(selected_img_bitmap, str, x,y, (float) textSize);
+        Bitmap new_bm = drawTextOnImage(selected_img_bitmap, str, x,y, (float) textSize, color);
         imgv_pickImage.setImageBitmap(new_bm);
     }
 
-    public Bitmap drawTextOnImage(Bitmap bm, String text, int x, int y, float textSize)
+    public Bitmap drawTextOnImage(Bitmap bm, String text, int x, int y, float textSize, int color)
     {
         Bitmap newBitmap = null;
 
@@ -215,7 +211,8 @@ public class TextOnImageActivity extends AppCompatActivity implements View.OnCli
             if(text!=null)
             {
                 Paint paintText1 = new Paint(Paint.ANTI_ALIAS_FLAG);
-                paintText1.setColor(Color.BLACK);
+                //paintText1.setColor(Color.BLACK);
+                paintText1.setColor(color);
                 paintText1.setTextSize(textSize);
                 paintText1.setStyle(Paint.Style.FILL);
 
