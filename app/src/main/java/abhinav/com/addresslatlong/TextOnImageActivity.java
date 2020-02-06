@@ -7,15 +7,11 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Matrix;
 import android.graphics.Paint;
-import android.graphics.PointF;
 import android.graphics.Rect;
-import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
-import android.os.Build;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -24,17 +20,17 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.io.File;
-
 public class TextOnImageActivity extends AppCompatActivity implements View.OnClickListener,
         SeekBar.OnSeekBarChangeListener
 {
     ImageView imgv_pickImage;
     Button btn_pickImage, btn_drawText;
     TextView txtv_imgWidth, txtv_imgHeight, txtv_x_cordinate, txtv_Y_cordinate, txtv_textSize;
+    TextView txtv_x_img, txtv_y_img ;
     ImageView imgv_y_up, imgv_x_left, imgv_x_right, imgv_y_down;
+    ImageView imgv_left, imgv_right, imgv_up, imgv_down;
     EditText edit_input;
-    SeekBar seekb_textSize, seekb_red, seekb_green, seekb_blue;
+    SeekBar seekb_textSize, seekb_red, seekb_green, seekb_blue, seekb_imgvHt, seekb_imgvWt;
 
     static final int REQUEST_IMAGE_PICK = 2;
     Uri uri = null;
@@ -69,6 +65,18 @@ public class TextOnImageActivity extends AppCompatActivity implements View.OnCli
         imgv_y_down = (ImageView) findViewById(R.id.imgv_y_down);
         imgv_y_down.setOnClickListener(this);
 
+        imgv_left = (ImageView) findViewById(R.id.imgv_left);
+        imgv_left.setOnClickListener(this);
+        imgv_right = (ImageView) findViewById(R.id.imgv_right);
+        imgv_right.setOnClickListener(this);
+        imgv_up = (ImageView) findViewById(R.id.imgv_up);
+        imgv_up.setOnClickListener(this);
+        imgv_down = (ImageView) findViewById(R.id.imgv_down);
+        imgv_down.setOnClickListener(this);
+
+        txtv_x_img = (TextView) findViewById(R.id.txtv_x_img);
+        txtv_y_img = (TextView) findViewById(R.id.txtv_y_img);
+
         seekb_textSize = (SeekBar) findViewById(R.id.seekb_textSize);
         seekb_textSize.setOnSeekBarChangeListener(this);
 
@@ -78,6 +86,11 @@ public class TextOnImageActivity extends AppCompatActivity implements View.OnCli
         seekb_green.setOnSeekBarChangeListener(this);
         seekb_blue = (SeekBar) findViewById(R.id.seekb_blue);
         seekb_blue.setOnSeekBarChangeListener(this);
+
+        seekb_imgvHt = (SeekBar) findViewById(R.id.seekb_imgvHt);
+        seekb_imgvHt.setOnSeekBarChangeListener(this);
+        seekb_imgvWt = (SeekBar) findViewById(R.id.seekb_imgvWt);
+        seekb_imgvWt.setOnSeekBarChangeListener(this);
 
         txtv_textSize = (TextView) findViewById(R.id.txtv_textSize);
         txtv_textSize.setText(""+seekb_textSize.getProgress());
@@ -139,6 +152,38 @@ public class TextOnImageActivity extends AppCompatActivity implements View.OnCli
 
             getXYAndData();
         }
+
+        if(v.getId()==R.id.imgv_left)
+        {
+            int x = Integer.parseInt(txtv_x_img.getText().toString());
+            x = x-10;
+            txtv_x_img.setText(""+x);
+            getXYAndData();
+        }
+
+        if(v.getId()==R.id.imgv_up)
+        {
+            int y = Integer.parseInt(txtv_y_img.getText().toString());
+            y = y-10;
+            txtv_y_img.setText(""+y);
+            getXYAndData();
+        }
+
+        if(v.getId()==R.id.imgv_down)
+        {
+            int y = Integer.parseInt(txtv_y_img.getText().toString());
+            y = y+10;
+            txtv_y_img.setText(""+y);
+            getXYAndData();
+        }
+
+        if(v.getId()==R.id.imgv_right)
+        {
+            int x = Integer.parseInt(txtv_x_img.getText().toString());
+            x = x+10;
+            txtv_x_img.setText(""+x);
+            getXYAndData();
+        }
     }
 
     @Override
@@ -186,7 +231,61 @@ public class TextOnImageActivity extends AppCompatActivity implements View.OnCli
 
         Bitmap new_bm = drawTextOnImage(selected_img_bitmap, str, x,y, (float) textSize, color);
         imgv_pickImage.setImageBitmap(new_bm);
+
+        /*--------------------------------------------------------*/
+
+        int x_imgv = Integer.parseInt(txtv_x_img.getText().toString());
+        int y_imgv = Integer.parseInt(txtv_y_img.getText().toString());
+
+        int imgv_wd = seekb_imgvWt.getProgress();
+        int imgv_ht = seekb_imgvHt.getProgress();
+
+        Bitmap bm = BitmapFactory.decodeResource(getResources(), R.drawable.profile_icon);
+
+        Bitmap sdd = drawImageOnImage(new_bm, bm, x_imgv, y_imgv, imgv_wd, imgv_ht);
+        imgv_pickImage.setImageBitmap(sdd);
     }
+
+    /*--------------------------------------------------------*/
+
+    @Override
+    public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser)
+    {
+        if(seekBar.getId()==R.id.seekb_textSize)
+        {
+            txtv_textSize.setText(""+progress);
+            getXYAndData();
+        }
+
+        if((seekBar.getId()==R.id.seekb_red) || (seekBar.getId()==R.id.seekb_green) || (seekBar.getId()==R.id.seekb_blue))
+        {
+            getXYAndData();
+        }
+
+        if(seekBar.getId()==R.id.seekb_imgvWt)
+        {
+            getXYAndData();
+        }
+
+        if(seekBar.getId()==R.id.seekb_imgvHt)
+        {
+            getXYAndData();
+        }
+    }
+
+    @Override
+    public void onStartTrackingTouch(SeekBar seekBar)
+    {
+
+    }
+
+    @Override
+    public void onStopTrackingTouch(SeekBar seekBar)
+    {
+
+    }
+
+    /*--------------------------------------------------------*/
 
     public Bitmap drawTextOnImage(Bitmap bm, String text, int x, int y, float textSize, int color)
     {
@@ -230,30 +329,22 @@ public class TextOnImageActivity extends AppCompatActivity implements View.OnCli
         return newBitmap;
     }
 
-    @Override
-    public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser)
+    public Bitmap drawImageOnImage(Bitmap background, Bitmap pic, int x_to_draw, int y_to_draw, int width, int height)
     {
-        if(seekBar.getId()==R.id.seekb_textSize)
+        try
         {
-            txtv_textSize.setText(""+progress);
-            getXYAndData();
+            Canvas newCanvas = new Canvas(background);
+
+            Bitmap img_bitmap = Bitmap.createScaledBitmap(pic, width, height, true);
+
+            newCanvas.drawBitmap(img_bitmap, x_to_draw, y_to_draw,new Paint());
+
+        }catch (Exception e)
+        {
         }
 
-        if((seekBar.getId()==R.id.seekb_red) || (seekBar.getId()==R.id.seekb_green) || (seekBar.getId()==R.id.seekb_blue))
-        {
-            getXYAndData();
-        }
-    }
-
-    @Override
-    public void onStartTrackingTouch(SeekBar seekBar)
-    {
+        return background;
 
     }
 
-    @Override
-    public void onStopTrackingTouch(SeekBar seekBar)
-    {
-
-    }
 }
