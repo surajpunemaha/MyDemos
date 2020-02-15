@@ -1,9 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name"> माझे डेमो </string>
-
-    <string name="language_text"> मराठी </string>
-    <string name="change_language"> भाषा बदला </string>
+    <string name="app_name">My Demos</string>
 
     <string-array name="alphabates">
         <item> aaa </item>
@@ -37,6 +33,8 @@
         Please ignore if any spelling mistakes found. There is no third party library used for performing this animation.
     </string>
 
+    <string name="language_text"> English </string>
+    <string name="change_language"> Change Language </string>
     <string name="input_restrict_demo"> Input Restriction Demo </string>
 
     <string name="language_restriction_demo_description"> Language description demo Description </string>
@@ -57,7 +55,9 @@
     <string name="enter_otp">Enter OTP</string>
     <string name="draw_text">Draw Text On Image</string>
     <string name="recv_with_checkbox">Recycler View with Checkbox</string>
+    <string name="custome_progress_bar">Custom Progress Bar</string>
     <string name="lt"> &lt; </string>
     <string name="gt"> &gt; </string>
+
 
 </resources>
