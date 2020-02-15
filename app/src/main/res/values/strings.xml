@@ -55,6 +55,7 @@
     <string name="enter_otp">Enter OTP</string>
     <string name="draw_text">Draw Text On Image</string>
     <string name="recv_with_checkbox">Recycler View with Checkbox</string>
+    <string name="custome_progress_bar">Custom Progress Bar</string>
     <string name="lt"> &lt; </string>
     <string name="gt"> &gt; </string>
 

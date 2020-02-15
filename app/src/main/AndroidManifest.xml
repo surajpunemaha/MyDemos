@@ -77,7 +77,8 @@
         </receiver>
         -->
         <activity android:name=".TextOnImageActivity" />
-        <activity android:name=".RecyclerWithCheckboxActivity"></activity>
+        <activity android:name=".RecyclerWithCheckboxActivity" />
+        <activity android:name=".CustomProgressBarActivity"></activity>
     </application>
 
 </manifest>

@@ -14,7 +14,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     Button btn_fileUpload, btn_video_recording, btn_expr_evaluator, btn_abar_count;
     Button btn_expandalble_view, btn_count_down, btn_scan_aadhar, btn_language_demo;
     Button btn_input_restrict, btn_crop_image, btn_aws_sns;
-    Button btn_drawer_demo, btn_sms_retriver, btn_drawText, btn_recv_demo;
+    Button btn_drawer_demo, btn_sms_retriver, btn_drawText, btn_recv_demo, btn_custom_progress;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -26,6 +26,9 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
     public void initViews()
     {
+        btn_custom_progress= (Button) findViewById(R.id.btn_custom_progress);
+        btn_custom_progress.setOnClickListener(this);
+
         btn_recv_demo= (Button) findViewById(R.id.btn_recv_demo);
         btn_recv_demo.setOnClickListener(this);
 
@@ -99,6 +102,11 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view)
     {
+        if(view.getId()==R.id.btn_custom_progress)
+        {
+            startActivity(new Intent(HomeActivity.this, CustomProgressBarActivity.class));
+        }
+
         if(view.getId()==R.id.btn_recv_demo)
         {
             startActivity(new Intent(HomeActivity.this, RecyclerWithCheckboxActivity.class));
