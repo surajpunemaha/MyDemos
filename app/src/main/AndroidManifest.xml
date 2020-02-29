@@ -78,7 +78,8 @@
         -->
         <activity android:name=".TextOnImageActivity" />
         <activity android:name=".RecyclerWithCheckboxActivity" />
-        <activity android:name=".CustomProgressBarActivity"></activity>
+        <activity android:name=".CustomProgressBarActivity" />
+        <activity android:name=".PDFGenerationActivity"></activity>
     </application>
 
 </manifest>
