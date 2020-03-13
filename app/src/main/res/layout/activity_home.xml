@@ -18,6 +18,12 @@
             android:padding="10dp">
 
             <Button
+                android:id="@+id/btn_job_schedular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Job Schedular"/>
+
+            <Button
                 android:id="@+id/btn_pdf_demo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

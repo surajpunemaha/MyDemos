@@ -79,7 +79,14 @@
         <activity android:name=".TextOnImageActivity" />
         <activity android:name=".RecyclerWithCheckboxActivity" />
         <activity android:name=".CustomProgressBarActivity" />
-        <activity android:name=".PDFGenerationActivity"></activity>
+        <activity android:name=".PDFGenerationActivity" />
+        <activity android:name=".JobSchedularActivity"></activity>
+
+        <service
+            android:name=".JobCheckInternet"
+            android:exported="true"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+
     </application>
 
 </manifest>
