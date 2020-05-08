@@ -21,7 +21,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     Button btn_expandalble_view, btn_count_down, btn_scan_aadhar, btn_language_demo;
     Button btn_input_restrict, btn_crop_image, btn_aws_sns;
     Button btn_drawer_demo, btn_sms_retriver, btn_drawText, btn_recv_demo, btn_custom_progress;
-    Button btn_pdf_demo, btn_job_schedular, btn_read_excel;
+    Button btn_pdf_demo, btn_job_schedular, btn_read_excel, btn_google_signIn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -33,6 +33,9 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
     public void initViews()
     {
+        btn_google_signIn= (Button) findViewById(R.id.btn_google_signIn);
+        btn_google_signIn.setOnClickListener(this);
+
         btn_read_excel= (Button) findViewById(R.id.btn_read_excel);
         btn_read_excel.setOnClickListener(this);
 
@@ -118,6 +121,11 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view)
     {
+        if(view.getId()==R.id.btn_google_signIn)
+        {
+            startActivity(new Intent(HomeActivity.this, GoogleSignInDemo.class));
+        }
+
         if(view.getId()==R.id.btn_read_excel)
         {
             ArrayList<String> arrPerm = new ArrayList<>();
