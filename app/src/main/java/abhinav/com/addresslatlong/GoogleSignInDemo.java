@@ -41,9 +41,6 @@ public class GoogleSignInDemo extends AppCompatActivity implements View.OnClickL
 
         // Build a GoogleSignInClient with the options specified by gso.
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
-
-
-
     }
 
     @Override
