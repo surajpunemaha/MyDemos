@@ -12,7 +12,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.nbsp.materialfilepicker.MaterialFilePicker;
+/*import com.nbsp.materialfilepicker.MaterialFilePicker;
 import com.nbsp.materialfilepicker.ui.FilePickerActivity;
 
 import org.apache.poi.POIXMLDocument;
@@ -25,7 +25,7 @@ import org.apache.poi.poifs.filesystem.POIFSFileSystem;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;*/
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -74,7 +74,7 @@ public class ReadExcelActivity extends AppCompatActivity implements View.OnClick
         listv_details = (ListView) findViewById(R.id.listv_details);
     }
 
-    public void readExcelFileFromAssests(String file_path)
+    /*public void readExcelFileFromAssests(String file_path)
     {
         try
         {
@@ -148,7 +148,7 @@ public class ReadExcelActivity extends AppCompatActivity implements View.OnClick
         {
             e.printStackTrace();
         }
-    }
+    }*/
 
     @Override
     public void onClick(View view)
@@ -159,12 +159,12 @@ public class ReadExcelActivity extends AppCompatActivity implements View.OnClick
 //            intent.setType("*/*");
 //            startActivityForResult(intent, 7);
 
-            new MaterialFilePicker()
+            /*new MaterialFilePicker()
                     .withActivity(this)
                     .withRequestCode(1)
                     .withFilter(Pattern.compile(".*\\.xls")) // Filtering files and directories by file name using regexp
                     .withHiddenFiles(true) // Show hidden files and folders
-                    .start();
+                    .start();*/
         }
     }
 
@@ -172,7 +172,7 @@ public class ReadExcelActivity extends AppCompatActivity implements View.OnClick
     protected void onActivityResult(int requestCode, int resultCode, Intent data)
     {
         //super.onActivityResult(requestCode, resultCode, data);
-        switch (requestCode)
+        /*switch (requestCode)
         {
             case 1:
                 if(resultCode==RESULT_OK)
@@ -183,7 +183,7 @@ public class ReadExcelActivity extends AppCompatActivity implements View.OnClick
                     readExcelFileFromAssests(filePath);
                 }
                 break;
-        }
+        }*/
     }
 
 

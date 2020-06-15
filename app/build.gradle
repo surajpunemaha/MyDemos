@@ -41,8 +41,8 @@ dependencies {
     implementation 'com.google.android.gms:play-services-base:11.6.0'
 
     /* ------------------- Read Excel ----------------*/
-    implementation "org.apache.poi:poi:3.17"
+    /*implementation "org.apache.poi:poi:3.17"
     implementation "org.apache.poi:poi-ooxml:3.17"
-    implementation 'com.nbsp:library:1.8'
+    implementation 'com.nbsp:library:1.8'*/
     /*--------------------------------------------------*/
 }
