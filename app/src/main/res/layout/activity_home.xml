@@ -18,160 +18,191 @@
             android:padding="10dp">
 
             <Button
-                android:id="@+id/btn_job_schedular"
+                android:id="@+id/btn_camera"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Job Schedular"/>
+                android:text="Camera Demo"/>
 
-            <Button
-                android:id="@+id/btn_pdf_demo"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="PDF Demo"/>
+                android:orientation="vertical">
 
-            <Button
-                android:id="@+id/btn_custom_progress"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/custome_progress_bar"/>
+                <Button
+                    android:id="@+id/btn_screen_recorder"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Screen Recorder"/>
 
-            <Button
-                android:id="@+id/btn_recv_demo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/recv_with_checkbox"/>
+                <Button
+                    android:id="@+id/btn_google_signIn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Google Sign In"/>
 
-            <Button
-                android:id="@+id/btn_drawText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/draw_text"/>
+                <Button
+                    android:id="@+id/btn_read_excel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Read Excel"/>
 
-            <Button
-                android:id="@+id/btn_sms_retriver"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/sms_retriever_api"/>
+                <Button
+                    android:id="@+id/btn_job_schedular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Job Schedular"/>
 
-            <Button
-                android:id="@+id/btn_drawer_demo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/drawer_demo"/>
+                <Button
+                    android:id="@+id/btn_pdf_demo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="PDF Demo"/>
 
-            <Button
-                android:id="@+id/btn_aws_sns"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/aws_sns"/>
+                <Button
+                    android:id="@+id/btn_custom_progress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/custome_progress_bar"/>
 
-            <Button
-                android:id="@+id/btn_crop_image"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/crop_image"/>
+                <Button
+                    android:id="@+id/btn_recv_demo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/recv_with_checkbox"/>
 
-            <Button
-                android:id="@+id/btn_input_restrict"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/input_restrict_demo"/>
+                <Button
+                    android:id="@+id/btn_drawText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/draw_text"/>
 
-            <Button
-                android:id="@+id/btn_language_demo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/change_language"/>
+                <Button
+                    android:id="@+id/btn_sms_retriver"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sms_retriever_api"/>
 
-            <Button
-                android:id="@+id/btn_scan_aadhar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Scan Aadhar QR"/>
+                <Button
+                    android:id="@+id/btn_drawer_demo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/drawer_demo"/>
 
-            <Button
-                android:id="@+id/btn_count_down"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Count Down Demo"/>
+                <Button
+                    android:id="@+id/btn_aws_sns"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/aws_sns"/>
 
-            <Button
-                android:id="@+id/btn_expandalble_view"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Expandable View Demo"/>
+                <Button
+                    android:id="@+id/btn_crop_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/crop_image"/>
 
-            <Button
-                android:id="@+id/btn_abar_count"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Show count on actionbar icon"/>
+                <Button
+                    android:id="@+id/btn_input_restrict"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/input_restrict_demo"/>
 
-            <Button
-                android:id="@+id/btn_expr_evaluator"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Evaluate Expressions"/>
+                <Button
+                    android:id="@+id/btn_language_demo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/change_language"/>
 
-            <Button
-                android:id="@+id/btn_video_recording"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Video Recording Demo"/>
+                <Button
+                    android:id="@+id/btn_scan_aadhar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Scan Aadhar QR"/>
 
-            <Button
-                android:id="@+id/btn_fileUpload"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="File Upload Demo"/>
+                <Button
+                    android:id="@+id/btn_count_down"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Count Down Demo"/>
 
-            <Button
-                android:id="@+id/btn_sharedPrefs"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Shared Preferences Demo"/>
+                <Button
+                    android:id="@+id/btn_expandalble_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Expandable View Demo"/>
 
-            <Button
-                android:id="@+id/btn_calculateDistance"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Calculate Distance between two Lat-Long"/>
+                <Button
+                    android:id="@+id/btn_abar_count"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Show count on actionbar icon"/>
 
-            <Button
-                android:id="@+id/btn_scanQr"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Scan QR demo"/>
+                <Button
+                    android:id="@+id/btn_expr_evaluator"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Evaluate Expressions"/>
 
-            <Button
-                android:id="@+id/btn_bottomsheet"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Bottom sheet demo"/>
+                <Button
+                    android:id="@+id/btn_video_recording"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Video Recording Demo"/>
 
-            <Button
-                android:id="@+id/btn_crash_report"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Send crash report demo"/>
+                <Button
+                    android:id="@+id/btn_fileUpload"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="File Upload Demo"/>
 
-            <Button
-                android:id="@+id/btn_table_layout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Table Layout Demo"/>
+                <Button
+                    android:id="@+id/btn_sharedPrefs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Shared Preferences Demo"/>
 
-            <Button
-                android:id="@+id/btn_compression"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Image Compression Demo"/>
+                <Button
+                    android:id="@+id/btn_calculateDistance"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Calculate Distance between two Lat-Long"/>
 
-            <Button
-                android:id="@+id/btn_demoLatLong"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Lat Long Demo"/>
+                <Button
+                    android:id="@+id/btn_scanQr"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Scan QR demo"/>
+
+                <Button
+                    android:id="@+id/btn_bottomsheet"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Bottom sheet demo"/>
+
+                <Button
+                    android:id="@+id/btn_crash_report"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Send crash report demo"/>
+
+                <Button
+                    android:id="@+id/btn_table_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Table Layout Demo"/>
+
+                <Button
+                    android:id="@+id/btn_compression"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Image Compression Demo"/>
+
+                <Button
+                    android:id="@+id/btn_demoLatLong"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Lat Long Demo"/>
+
+            </LinearLayout>
 
         </LinearLayout>
 

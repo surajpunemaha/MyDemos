@@ -6,22 +6,29 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 
     <uses-feature
         android:name="android.hardware.camera.any"
         android:required="true" />
     <uses-feature
         android:name="android.hardware.camera.autofocus"
-        android:required="false" />
+        android:required="true" />
 
     <application
-        android:name=".TestApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".CameraDemoActivity"></activity>
+        <activity android:name=".InvisibleActivity" />
+        <activity android:name=".ScreenRecorderActivity" />
+        <activity android:name=".GoogleSignInDemo" />
+        <activity android:name=".ReadExcelActivity" />
         <activity android:name=".HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -45,7 +52,6 @@
         <activity
             android:name=".TableDemo"
             android:label="Table Demo" />
-        <activity android:name=".CrashDemoActivity" />
         <activity android:name=".BottomSheet" />
         <activity android:name=".ScanQr" />
         <activity android:name=".CalculateDistance" />
@@ -65,7 +71,6 @@
             android:label="@string/title_activity_drawer_demo"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".SMSRetrieverActivity" />
-
         <!--
         <receiver android:name=".Receivers.SmsBroadcastReceiver"
             android:exported="true">
@@ -80,13 +85,21 @@
         <activity android:name=".RecyclerWithCheckboxActivity" />
         <activity android:name=".CustomProgressBarActivity" />
         <activity android:name=".PDFGenerationActivity" />
-        <activity android:name=".JobSchedularActivity"></activity>
+        <activity android:name=".JobSchedularActivity" />
 
         <service
             android:name=".JobCheckInternet"
             android:exported="true"
             android:permission="android.permission.BIND_JOB_SERVICE" />
+        <service
+            android:name=".Serrvice.FloatingViewService"
+            android:enabled="true"
+            android:exported="false" />
 
+        <receiver
+            android:name=".Receivers.StartStopRecordingReceiver"
+            android:enabled="true"
+            android:exported="true" />
     </application>
 
 </manifest>

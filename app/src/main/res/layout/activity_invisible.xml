@@ -4,15 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="abhinav.com.addresslatlong.CrashDemoActivity">
-
-
-    <Button
-        android:id="@+id/btn_clickHere"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Click here to make this app crash"/>
-
-
+    tools:context=".InvisibleActivity">
 
 </android.support.constraint.ConstraintLayout>
