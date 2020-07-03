@@ -24,7 +24,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CameraDemoActivity"></activity>
+        <activity android:name=".ZoomAPIDemo"></activity>
+        <activity android:name=".ServiceDemo" />
         <activity android:name=".InvisibleActivity" />
         <activity android:name=".ScreenRecorderActivity" />
         <activity android:name=".GoogleSignInDemo" />
@@ -95,6 +96,10 @@
             android:name=".Serrvice.FloatingViewService"
             android:enabled="true"
             android:exported="false" />
+        <service
+            android:name=".Serrvice.ForegroundService"
+            android:enabled="true"
+            android:exported="true" />
 
         <receiver
             android:name=".Receivers.StartStopRecordingReceiver"

@@ -18,15 +18,22 @@
             android:padding="10dp">
 
             <Button
-                android:id="@+id/btn_camera"
+                android:id="@+id/btn_zoomAPI"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Camera Demo"/>
+                android:text="zoom API demo"/>
+
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btn_foregroundService"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Foreground Service Demo"/>
 
                 <Button
                     android:id="@+id/btn_screen_recorder"

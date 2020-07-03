@@ -22,7 +22,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     Button btn_input_restrict, btn_crop_image, btn_aws_sns;
     Button btn_drawer_demo, btn_sms_retriver, btn_drawText, btn_recv_demo, btn_custom_progress;
     Button btn_pdf_demo, btn_job_schedular, btn_read_excel, btn_google_signIn;
-    Button btn_screen_recorder, btn_camera;
+    Button btn_screen_recorder, btn_foregroundService, btn_zoomAPI;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -34,8 +34,11 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
     public void initViews()
     {
-        btn_camera= (Button) findViewById(R.id.btn_camera);
-        btn_camera.setOnClickListener(this);
+        btn_zoomAPI= (Button) findViewById(R.id.btn_zoomAPI);
+        btn_zoomAPI.setOnClickListener(this);
+
+        btn_foregroundService= (Button) findViewById(R.id.btn_foregroundService);
+        btn_foregroundService.setOnClickListener(this);
 
         btn_screen_recorder= (Button) findViewById(R.id.btn_screen_recorder);
         btn_screen_recorder.setOnClickListener(this);
@@ -128,9 +131,14 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view)
     {
-        if(view.getId()==R.id.btn_camera)
+        if(view.getId()==R.id.btn_zoomAPI)
         {
-            startActivity(new Intent(HomeActivity.this, CameraDemoActivity.class));
+            startActivity(new Intent(HomeActivity.this, ZoomAPIDemo.class));
+        }
+
+        if(view.getId()==R.id.btn_foregroundService)
+        {
+            startActivity(new Intent(HomeActivity.this, ServiceDemo.class));
         }
 
         if(view.getId()==R.id.btn_screen_recorder)
